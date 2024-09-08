@@ -1,0 +1,4 @@
+"0","colnames(sub_movies)[3] <- 'Bechdel'"
+"0","colnames(sub_movies)[4] <- 'budget'"
+"0","colnames(sub_movies)[5] <- 'domestic'"
+"0","colnames(sub_movies)[6] <- 'international'"

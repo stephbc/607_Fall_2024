@@ -1,0 +1,4 @@
+"0","sub_movies <- transform(sub_movies, total_profit = domgross_2013. + intgross_2013. - budget_2013.)"
+"2","Error in domgross_2013. + intgross_2013. : 
+  non-numeric argument to binary operator
+"
