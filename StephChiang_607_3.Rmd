@@ -95,27 +95,27 @@ print(data_stats_majors)
 
 `(.)\1\1`
 
-This parentheses is a group of only one character (any character, denoted by the period). The `\1` is referring to this group, and requiring it to be repeated. So this character must appear 3 times in a row to match.
+This parentheses is a group of only one character (any character, denoted by the period). The `\1` is referring to this group, and requiring it to be repeated. So this character must appear 3 times in a row to match. For example, `aaa`.
 
 
 `"(.)(.)\\2\\1"`
 
-The quotes just mean quotes, so this is a string version OF a regex. This is 2 groups, each of any one character. Because this is a string, the double slashes are escaped to one slash and denote order so next, the 2nd group has to precede the 1st. 
+The quotes just mean quotes, so this is a string version OF a regex. This is 2 groups, each of any one character. Because this is a string, the double slashes are escaped to one slash and denote order so next, the 2nd group has to precede the 1st. For example `"azza"`.
 
 
 `(..)\1`
 
-This is a group of any 2 characters, repeated.
+This is a group of any 2 characters, repeated. For example, `xyxy`.
 
 
 `"(.).\\1.\\1"`
 
-This is a string again, and means a group of any single character, followed by any character, then the group, any character and finally the group again.
+This is a string again, and means a group of any single character, followed by any character, then the group, any character and finally the group again. For example, `"bybxb"`.
 
 
 `"(.)(.)(.).*\\3\\2\\1"`
 
-This is also a string of a regex. Groups 1, 2 and 3, each of any single character, followed by any number of any characters, then groups 3, 2, and 1 in that order.
+This is also a string of a regex. Groups 1, 2 and 3, each of any single character, followed by any number of any characters, then groups 3, 2, and 1 in that order. For example, `"xyzHelloWorldzyx"`.
 
 
 ### 4. RegEx construction
