@@ -63,7 +63,8 @@ genres <- data.frame(genre_name)
 genres
 ```
 
-From there, a final data frame listing my favorite songs would only need an ID column, a song title column and a column for any kind information that could only be attached to the song itself, e.g. the number of times I played it.
+**** EDIT ****
+From there, a final data frame listing songs could include the following columns: song title, album foreign key(s), artist foreign primary key(s), genre foreign key(s), and at least one column dependent solely on the song title, like the number of times I've played the track. 
 
 
 #### Example C: 
@@ -75,7 +76,19 @@ travel <- read.csv(file="travel.csv", header = TRUE)
 travel
 ```
 
-This data is normalized because even though names and countries appear in multiple rows, each pair of name-country could be used as the primary key and the `traveled` boolean column value is fully dependent on the key, the whole key and nothing but that key.
+This data is normalized / tidy because even though names and countries appear in multiple rows, each pair of name-country could be used as a composite primary key. The `traveled` boolean column value is fully dependent on that key, the whole key and nothing but that key.
+
+**** EDIT ****
+Adding another column like `year` would break this normalization. In that case, separate tables for name and country could be split off and the TRUE/FALSE `traveled` column could also be removed entirely. The existence of a `year` value could then represent whether or not each person traveled there. The columns of the resulting join table could be: the name foreign key(s), the country foreign key(s), and the year(s).
+
+``` {r travel-foreignkeys}
+name <- c(1, 1, 2, 2, 2, 4)
+country <- c(1, 2, 3, 3, 4, 4)
+year <- c(2019, 2021, 2018, 2023, 2022, 2023)
+travel_2 <- data.frame(name, country, year)
+
+travel_2
+```
 
 
 ### 2. Character Manipulation
